@@ -1,0 +1,138 @@
+﻿@model ResultModel
+@{
+    ViewData["Title"] = "Input Page";
+}
+
+    <div>
+        <header class="display-4 mb-4">Результаты расчета</header>
+        <div class="float-left mt-4">
+            <table class="text-center" border="1">
+                <tr style="background:#36ad5a;">
+                    <td colspan="2" align="center">
+                        Теплота,кВт
+                    </td>
+                </tr>
+                <tr style="background:lightblue;">
+                    <td>
+                        Приход
+                    </td>
+                    <td>
+                        Расход
+                    </td>
+                    <td>
+                        Статьи
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Model.QN_ (QN)
+                    </td>
+                    <td>
+                        @Model.Q1_ (@Model.PQ1_%)
+                    </td>
+                    <td style="background:#1968e6">
+                        Q1
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Model.Q2B_ (@Model.PQ2_%)
+                    </td>
+                    <td style="background:#7463e6">
+                        Q2
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Model.Q3B_ (@Model.PQ3_%)
+                    </td>
+                    <td style="background:#f52222">
+                        Q3
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Model.Q4B_ (@Model.PQ4_%)
+                    </td>
+                    <td style="background:#16de1d">
+                        Q4
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @Model.Q5_ (@Model.PQ5_%)
+                    </td>
+                    <td style="background:#3cf0d5">
+                        Q5
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Итого
+                    </td>
+                    <td>
+                        @Model.Total_ кВт (@Model.TotalP_%)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            
+            <div class="mt-5">
+                <table>
+                    <tr>
+                        <td>
+                            Итого:
+                        </td>
+                        <td class="font-weight-bold ml-3">
+                            @Model.Total_ кВт (@Model.TotalP_%)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Расход мазута на печь:
+                        </td>
+                        <td class="font-weight-bold ml-3">
+                            @Model.B1_ кг/ч
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Тепловая мощь печи:
+                        </td>
+                        <td class="font-weight-bold ml-3">
+                            @Model.Qx_ кВт
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Расход теплоты на 1 кг испаренной влаги:
+                        </td>
+                        <td class="font-weight-bold ml-3">
+                            @Model.Qeva_ кДж/кг
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <div class="chart float-left" style="width:50%;height:45%">
+                <canvas id="myChart"></canvas>
+            </div>
+        <div class="float-left font-weight-light font-size-5 ml-5">
+            <p>
+                <label style="background:lightgray">Q1-Расход теплоты на нагреваниепросушиваемых материалов и испарение влаги</label><br />
+                <label style="background:lightgray">Q2-Потери теплоты с отходящими газами</label><br />
+                <label style="background:lightgray">Q3-Потери теплоты с химическим недожогом</label><br />
+                <label style="background:lightgray">Q4-Потери теплоты топкой</label><br />
+                <label style="background:lightgray">QN-Теплота сгорания мазута</label>
+            </p>
+        </div>
+    </div>

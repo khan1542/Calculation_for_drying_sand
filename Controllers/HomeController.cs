@@ -27,6 +27,16 @@ namespace Calculation_for_drying_sand.Controllers
         {
             return View();
         }
+        public IActionResult InputData()
+        {
+            return View();
+        }
+        public IActionResult ResultData(InputModel data)
+        {
+            data.Calculate();
+            ResultModel result = data.Result();
+            return View(result);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
