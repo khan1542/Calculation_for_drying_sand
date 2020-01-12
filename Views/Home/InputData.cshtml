@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <form action="/Home/ResultData">
+        <div class="container">
+            <header>
+                <h1 class="display-4">Введите данные</h1>
+            </header>
+            <div>
+                <table border="1" align="center">
+                    <tr class="text-center" style="background:#36ad5a;">
+                        <td colspan="6">Марка мазута 100,со следующим составом:</td>
+                    </tr>
+                    <tr class="text-center" style="background:lightblue;">
+                        <th>C,%</th>
+                        <th>H,%</th>
+                        <th>S,%</th>
+                        <th>O,%</th>
+                        <th>N,%</th>
+                        <th>W,%</th>
+                    </tr>
+                    <tr>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.C" value="86.6" /></td>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.H" value="10.4" /></td>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.S" value="0.84" /></td>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.O" value="0.4" /></td>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.N" value="0.6" /></td>
+                        <td><input class="text-center" style="width:100px" type="number" step="0.1" name="data.W" value="0.8" /></td>
+                    </tr>
+                </table> <br />
+            </div>
+            <div class="float-left">
+                <label class="mt-1">Начальная влажность песка,%</label><br />
+                    <label class="mt-1">Конечная влажность песка,%</label><br />
+                    <label class="mt-1">Максимальная температура газов,°C</label><br />
+                    <label class="mt-1">Минимальная температура газов,°C</label><br />
+                    <label class="mt-1">Температура песка вначале сушки,°C</label><br />
+                    <label class="mt-1">Температура окр. среды,°C</label><br />
+                <div>
+                    <button class="mt-4" type="submit">Вычислить</button>
+                </div>
+            </div>
+
+            <div class="float-left ml-3">
+                <input class="text-right mb-2" type="number" style="width:80px" name="data.W0" value="10" /><br />
+                <input class="text-right mb-2" type="number" style="width:80px" name="data.W1" value="0.5" /><br />
+                <input class="text-right mb-2" type="number" style="width:80px" name="data.Tmax" value="850" /><br />
+                <input class="text-right mb-2" type="number" style="width:80px" name="data.Tmin" value="350" /><br />
+                <input class="text-right mb-2" type="number" style="width:80px" name="data.Tmstart" value="40" /><br />
+                <input class="text-right" type="number" style="width:80px" name="data.Tenv" value="20" /><br />
+            </div>
+            <div class="float-left ml-3">
+                <header>
+                    <h6>Размер барабана</h6>
+                </header>
+                <div>
+                    <div class="float-left">
+                        <label class="">Диаметр,м</label><br />
+                        <label class="mt-2">Длина,м</label><br />
+                    </div>
+                    <div class="float-left ml-3">
+                        <input class="text-right mb-2" type="number" style="width:80px" name="data.D" value="1.6" /><br />
+                        <input class="text-right" type="number" style="width:80px" name="data.L" value="8" /><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>

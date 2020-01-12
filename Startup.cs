@@ -62,7 +62,7 @@ namespace Calculation_for_drying_sand
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=InputData}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
