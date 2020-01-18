@@ -107,6 +107,7 @@ namespace Calculation_for_drying_sand.Models
             #endregion
 
         }
+
         public ResultModel Result()
         {
             return new ResultModel
